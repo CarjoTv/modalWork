@@ -6,15 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>desde-0</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="../js/script.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1 class="text-center text-white bg-black">Hola desde 0</h1>
-      <nav>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./pages/about.html">About</a></li>
-        <li><a href="./pages/contact.html">Contact</a></li>
-      </nav>
-    </header>
+    <div class="container">
+
+      <h1 class="text-2xl font-bold mb-4">Lista de Contactos</h1>
+      
+      //Modal Contactos Correos Cerrar
+     <div id="modalContactos" class="fixed inset-0 bg-black/50 hidden justify-center items-center">
+      <div class="bg-white p-6 rounded-2xl w-[300px] relative">
+        <button id="Cerrar" class="absolute top-2 right-3 text-xl"></button>&times;</button>
+        <h2 class="text-xl font-bold mb-4">Detalle<h/2>
+          <p id="detalleNombre" class="mb-2"></p>
+          <p id="detalleCorreo"></p>
+        </div>
+     </div>
+
+     <form id="" action="#" method="POST" class="space-y-4">
+            
+            <input type="text" placeholder="YOUR NAME" 
+                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
+
+            <input type="email" placeholder="YOUR EMAIL" 
+                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
+
+            <input type="number" placeholder="YOUR NUMBER" 
+                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
+
+            <button type="submit" 
+                class="w-full bg-[#D4FF59] text-black font-bold py-4 rounded-xl hover:opacity-90 transition">
+                ENVIAR
+            </button>
+            
+        </form>
   </body>
 </html>
+
+
+
+
+<!--
+<div class="bg-white max-w-lg mx-auto p-8 rounded-3xl shadow-lg">
+        
+        <h2 class="text-center text-2xl font-bold mb-8 text-black">
+            CONTÁCTAME
+        </h2> 
+
+        <form action="#" method="POST" class="space-y-4">
+            
+            <input type="text" placeholder="YOUR NAME" 
+                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
+
+            <input type="email" placeholder="EMAIL ADDRESS" 
+                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
+
+            <textarea placeholder="CHAT HERE" rows="4" 
+                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none resize-none"></textarea>
+
+            <button type="submit" 
+                class="w-full bg-[#D4FF59] text-black font-bold py-4 rounded-xl hover:opacity-90 transition">
+                ENVIAR
+            </button>
+            
+        </form>
+    </div>
+
+
+
+
+
+
+
+-->
