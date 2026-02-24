@@ -10,34 +10,32 @@ let lista = document.querySelector("#lista")
     let email2=email.value
     let phone=telefono.value
 
+    // Tendre que generar un ID unico para cada contacto para poder usar el onclick de mejor manera, usa la fecha de hoy de base
+    const idUnico = `contacto-${Date.now()}`;
 
     lista.innerHTML +=`
-    <div class="bg-gray-100 p-4 rounded-xl mb-4">
-        <p class="font-bold">${name}</p>
-        <div class="gap-4 hidden" id="info-${name}">
-            <p>${email2}</p>
-            <p>${phone}</p>
+    <div onclick="mostrarDetalles('${idUnico}')" class="contacto-card bg-gray-100 p-4 rounded-xl mb-4 cursor-pointer hover:bg-gray-200 transition">
+        <p class="font-bold border-b pb-2">${name}</p>
+        <div class="info-extra hidden mt-2" id="${idUnico}">
+            <p><span class="font-semibold">Email:</span> ${email2}</p>
+            <p><span class="font-semibold">Tel:</span> ${phone}</p>
         </div>
     </div>
-    `
+    `;
   nombre.value=""
   email.value=""
   telefono.value=""
-
-  mostrarEmailYPhone()
-
+  modal.style.display = "none";
 
   });
 
-  const contactoInfo = document.querySelector("#name")
-  
-  function mostrarEmailYPhone (){
-    lista.addEventListener ("click", () =>{
-       contactoInfo.classList.remove("hidden")
-    })
+  function mostrarDetalles(id) {
+      const elemento = document.getElementById(id);
+      if (elemento) {
+          // .toggle añade la clase si no está, y la quita si ya está
+          elemento.classList.toggle("hidden");
+      }
   }
-
-mostrarEmailYPhone()
 
 
 
