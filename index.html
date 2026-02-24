@@ -6,42 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>desde-0</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="../js/script.js" defer></script>
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container flex flex-col items-center justify-center min-h-screen">
+        <button id="myBtn" class="bg-[#D4FF59] text-black font-bold py-2 px-4 rounded-xl hover:opacity-90 transition mb-4">
+            Agregar Contacto
+        </button>
 
       <h1 class="text-2xl font-bold mb-4">Lista de Contactos</h1>
-      
-      //Modal Contactos Correos Cerrar
-     <div id="modalContactos" class="fixed inset-0 bg-black/50 hidden justify-center items-center">
-      <div class="bg-white p-6 rounded-2xl w-[300px] relative">
-        <button id="Cerrar" class="absolute top-2 right-3 text-xl"></button>&times;</button>
-        <h2 class="text-xl font-bold mb-4">Detalle<h/2>
-          <p id="detalleNombre" class="mb-2"></p>
-          <p id="detalleCorreo"></p>
-        </div>
-     </div>
-
-     <form id="" action="#" method="POST" class="space-y-4">
+      <div class="flex flex-col items-center justify-center w-full">
+        <div id="lista">
             
-            <input type="text" placeholder="YOUR NAME" 
+        </div>
+      </div>
+     
+     <div id="modalFormulario" class="fixed  inset-0 bg-black/50 hidden flex justify-center items-center">
+     <div class="bg-white p-6 rounded-2xl w-75 relative"> 
+     <button id="cerrarFormulario" class="absolute top-2 right-3 text-xl">&times;</button>
+     <h2 class="text-xl font-bold mb-4">Nuevo Contacto</h2>
+     
+     <div id="modalContactos"  class="space-y-4 w-10/12">
+            
+            <input id="inputNombre" type="text" name="nombre" placeholder="nombre" 
                 class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
 
-            <input type="email" placeholder="YOUR EMAIL" 
+            <input id="inputEmail" type="email" name="email" placeholder="email" 
                 class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
 
-            <input type="number" placeholder="YOUR NUMBER" 
+            <input id="inputTelefono" type="number" name="contacto" placeholder="numero de contacto" 
                 class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
 
-            <button type="submit" 
+            <button id="enviar" 
                 class="w-full bg-[#D4FF59] text-black font-bold py-4 rounded-xl hover:opacity-90 transition">
                 ENVIAR
             </button>
             
-        </form>
+                </div>
+             </div>
+        </div>
+    </div>
   </body>
-</html>
+
+    </html>
 
 
 
@@ -73,9 +80,22 @@
     </div>
 
 
+</div>
+                /Open The Modal
+                <button id="myBtn">Open Modal</button>
 
+                <The Modal 
+                <div id="myModal" class="modal">
 
+                Modal content -
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
 
+                </div>
+
+    
 
 
 -->
