@@ -1,71 +1,65 @@
-const botonEnviarContactos = document.querySelector ("#enviar")
-const nombre =document.querySelector("#inputNombre")
-const email = document.querySelector("#inputEmail")
-const telefono = document.querySelector("#inputTelefono")
+const botonEnviarContactos = document.querySelector("#enviar");
+const nombre = document.querySelector("#inputNombre");
+const email = document.querySelector("#inputEmail");
+const telefono = document.querySelector("#inputTelefono");
+const lista = document.querySelector("#lista");
+const modal = document.getElementById("modalFormulario");
+const btnAbrirModal = document.getElementById("myBtn");
+const btnCerrarModal = document.getElementById("cerrarFormulario");
 
-let lista = document.querySelector("#lista")
-      
-  botonEnviarContactos.addEventListener ("click", function(){
-    let name=nombre.value
-    let email2=email.value
-    let phone=telefono.value
+// Función para agregar contacto
+botonEnviarContactos.addEventListener("click", function () {
+  if (nombre.value === "") return alert("Por favor escribe un nombre");
 
-    // Tendre que generar un ID unico para cada contacto para poder usar el onclick de mejor manera, usa la fecha de hoy de base
-    const idUnico = `contacto-${Date.now()}`;
+  const idUnico = `contacto-${Date.now()}`; //asigna un ID único basado en la marca de tiempo para cada contacto agregado
 
-    lista.innerHTML +=`
-    <div onclick="mostrarDetalles('${idUnico}')" class="contacto-card bg-gray-100 p-4 rounded-xl mb-4 cursor-pointer hover:bg-gray-200 transition">
-        <p class="font-bold border-b pb-2">${name}</p>
-        <div class="info-extra hidden mt-2" id="${idUnico}">
-            <p><span class="font-semibold">Email:</span> ${email2}</p>
-            <p><span class="font-semibold">Tel:</span> ${phone}</p>
+  // Estilo de tarjeta y funcionalidad de expandir detalles al hacer clic usando 'onclick'.
+  lista.innerHTML += `
+    <div onclick="mostrarDetalles('${idUnico}')" class="bg-[#F3F4F6] p-5 rounded-xl cursor-pointer hover:bg-gray-200 transition-colors duration-200"> 
+        <p class="text-gray-800 font-medium">${nombre.value}</p>
+        <div id="${idUnico}" class="hidden mt-2 pt-2 border-t border-gray-300 text-sm text-gray-600">
+            <p><strong>Email:</strong> ${email.value}</p>
+            <p><strong>Tel:</strong> ${telefono.value}</p>
         </div>
     </div>
-    `;
-  nombre.value=""
-  email.value=""
-  telefono.value=""
-  modal.style.display = "none";
+    `; 
 
-  });
+  // Limpiar y cerrar
+  nombre.value = "";
+  email.value = "";
+  telefono.value = "";
+  modal.classList.add("hidden");
+  modal.style.display = "none"; // Asegurar cierre
+});
 
-  function mostrarDetalles(id) {
-      const elemento = document.getElementById(id);
-      if (elemento) {
-          // .toggle añade la clase si no está, y la quita si ya está
-          elemento.classList.toggle("hidden");
-      }
-  }
+// Función para expandir/colapsar
+/**
+ * Alterna la visibilidad de los detalles de un contacto.
+ * Utiliza .toggle para añadir o quitar la clase hidden según el estado actual.
+ */
+function mostrarDetalles(id) {
+    const elemento = document.getElementById(id); // Obtener el elemento por su ID único
 
+    if (elemento) { // Verificar que el elemento existe antes de intentar manipularlo
 
-
-
-
-
-
-//Script para escuchar al click del boton y mostrar el modal
-// Toma el valor modal
-const modal = document.getElementById("modalFormulario");
-
-// Toma el boton que abre el modal
-const btn = document.getElementById("myBtn");
-
-// Toma el elemento <Etiqueta cualquiera> que cierra el modal
-const  btnClose = document.getElementById("cerrarFormulario");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+        // Si tiene 'hidden' lo quita, si no lo tiene lo pone.
+        elemento.classList.toggle("hidden");
+    }
 }
 
-// When the user clicks on <span> (x), close the modal
-btnClose.onclick = function() {
-  modal.style.display = "none";
-}
+// Lógica del Modal
+btnAbrirModal.onclick = () => {
+  modal.style.display = "flex"; // Cambia a 'flex' para mostrar el modal
+  modal.classList.remove("hidden");
+};
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+btnCerrarModal.onclick = () => {
+  modal.style.display = "none";
+};
+//Cerrar si el usuario hace clic fuera del modal
+window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
+ //Comentarios por Anthony, cualquier duda o sugerencia no dudes en preguntar.

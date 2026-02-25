@@ -5,97 +5,69 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>desde-0</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
     <script src="./js/script.js" defer></script>
   </head>
-  <body>
-    <div class="container flex flex-col items-center justify-center min-h-screen">
-        <button id="myBtn" class="bg-[#D4FF59] text-black font-bold py-2 px-4 rounded-xl hover:opacity-90 transition mb-4">
-            Agregar Contacto
+  <body class="bg-gray-50 min-h-screen flex justify-center py-10">
+    <div
+      class="w-full max-w-2xl bg-white p-8 rounded-3xl shadow-sm border border-gray-100"
+    >
+      <div class="flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-semibold text-gray-800">Lista de Contactos</h1>
+        <button
+          id="myBtn"
+          class="bg-[#D4FF59] text-black w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shadow-md hover:scale-105 transition-transform"
+        >
+          +
         </button>
+      </div>
 
-      <h1 class="text-2xl font-bold mb-4">Lista de Contactos</h1>
-      <div class="flex flex-col items-center justify-center w-full">
-        <div id="lista">
-            
+      <div id="lista" class="space-y-3"></div>
+
+      <div
+        id="modalFormulario"
+        class="fixed inset-0 bg-black/40 hidden justify-center items-center z-50"
+      >
+        <div class="bg-white p-8 rounded-3xl w-96 relative shadow-2xl">
+          <button
+            id="cerrarFormulario"
+            class="absolute top-4 right-5 text-2xl text-gray-400 hover:text-black"
+          >
+            &times;
+          </button>
+          <h2 class="text-xl font-bold mb-6">Nuevo Contacto</h2>
+
+          <div class="space-y-4">
+            <input
+              id="inputNombre"
+              type="text"
+              placeholder="Nombre"
+              class="w-full bg-gray-100 p-4 rounded-2xl outline-none "
+            />
+            <input
+              id="inputEmail"
+              type="email"
+              placeholder="Email"
+              class="w-full bg-gray-100 p-4 rounded-2xl outline-none "
+            />
+            <input
+              id="inputTelefono"
+              type="number"
+              placeholder="Teléfono"
+              class="w-full bg-gray-100 p-4 rounded-2xl outline-none"
+            />
+            <button
+              id="enviar"
+              class="w-full bg-[#D4FF59] text-black font-bold py-4 rounded-2xl hover:opacity-90 transition mt-4"
+            >
+              GUARDAR
+            </button>
+          </div>
         </div>
       </div>
-     
-     <div id="modalFormulario" class="fixed  inset-0 bg-black/50 hidden justify-center items-center">
-     <div class="bg-white p-6 rounded-2xl w-75 relative"> 
-     <button id="cerrarFormulario" class="absolute top-2 right-3 text-xl">&times;</button>
-     <h2 class="text-xl font-bold mb-4">Nuevo Contacto</h2>
-     
-     <div id="modalContactos"  class="space-y-4 w-10/12">
-            
-            <input id="inputNombre" type="text" name="nombre" placeholder="nombre" 
-                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
-
-            <input id="inputEmail" type="email" name="email" placeholder="email" 
-                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
-
-            <input id="inputTelefono" type="number" name="contacto" placeholder="numero de contacto" 
-                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
-
-            <button id="enviar" 
-                class="w-full bg-[#D4FF59] text-black font-bold py-4 rounded-xl hover:opacity-90 transition">
-                ENVIAR
-            </button>
-            
-                </div>
-             </div>
-        </div>
     </div>
+
+    <script src="./js/script.js" defer></script>
   </body>
+</html>
 
-    </html>
-
-
-
-
-<!--
-<div class="bg-white max-w-lg mx-auto p-8 rounded-3xl shadow-lg">
-        
-        <h2 class="text-center text-2xl font-bold mb-8 text-black">
-            CONTÁCTAME
-        </h2> 
-
-        <form action="#" method="POST" class="space-y-4">
-            
-            <input type="text" placeholder="YOUR NAME" 
-                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
-
-            <input type="email" placeholder="EMAIL ADDRESS" 
-                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none">
-
-            <textarea placeholder="CHAT HERE" rows="4" 
-                class="w-full bg-gray-200 p-4 rounded-xl text-sm outline-none resize-none"></textarea>
-
-            <button type="submit" 
-                class="w-full bg-[#D4FF59] text-black font-bold py-4 rounded-xl hover:opacity-90 transition">
-                ENVIAR
-            </button>
-            
-        </form>
-    </div>
-
-
-</div>
-                /Open The Modal
-                <button id="myBtn">Open Modal</button>
-
-                <The Modal 
-                <div id="myModal" class="modal">
-
-                Modal content -
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
-                </div>
-
-                </div>
-
-    
-
-
--->
