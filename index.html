@@ -14,6 +14,7 @@
     >
       <div class="flex justify-between items-center mb-8">
         <h1 class="text-2xl font-semibold text-gray-800">Lista de Contactos</h1>
+        <!-- Botón para abrir el formulario de contacto este controla la visibilidad del modal-->
         <button
           id="myBtn"
           class="bg-[#D4FF59] text-black w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shadow-md hover:scale-105 transition-transform"
@@ -21,20 +22,23 @@
           +
         </button>
       </div>
-
+      <!-- Lista de contactos (Aquí se van a renderizar los contactos guardados) -->
       <div id="lista" class="space-y-3"></div>
 
+      <!-- Formulario de contacto (Este debe de estar en defaul hidden ya que el usario debe solo verlo si le da click al button)-->
       <div
         id="modalFormulario"
         class="fixed inset-0 bg-black/40 hidden justify-center items-center z-50"
       >
         <div class="bg-white p-8 rounded-3xl w-96 relative shadow-2xl">
+          <!-- Botton de cerrar -->
           <button
             id="cerrarFormulario"
             class="absolute top-4 right-5 text-2xl text-gray-400 hover:text-black"
           >
             &times;
           </button>
+          <!-- Contenido del formulario -->
           <h2 class="text-xl font-bold mb-6">Nuevo Contacto</h2>
 
           <div class="space-y-4">
@@ -42,13 +46,13 @@
               id="inputNombre"
               type="text"
               placeholder="Nombre"
-              class="w-full bg-gray-100 p-4 rounded-2xl outline-none "
+              class="w-full bg-gray-100 p-4 rounded-2xl outline-none"
             />
             <input
               id="inputEmail"
               type="email"
               placeholder="Email"
-              class="w-full bg-gray-100 p-4 rounded-2xl outline-none "
+              class="w-full bg-gray-100 p-4 rounded-2xl outline-none"
             />
             <input
               id="inputTelefono"
@@ -67,7 +71,6 @@
       </div>
     </div>
 
-    <script src="./js/script.js" defer></script>
+   
   </body>
 </html>
-

@@ -62,4 +62,4 @@ window.onclick = (event) => {
     modal.style.display = "none";
   }
 };
- //Comentarios por Anthony, cualquier duda o sugerencia no dudes en preguntar.
+ //Comentarios por Anthony.
